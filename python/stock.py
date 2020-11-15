@@ -87,9 +87,11 @@ if __name__ == '__main__':
     # 입력 부분 ㅣ 공백 입력 또는 CTRL+C 등 예외 처리 적용
     while True:
         try:
-            print("""        
-    정확한 종목 코드를 입력해주세요 :
-    [예시] 미국주식(티커) : AAPL ㅣ 코스피(코드.KS) : 005930.KS ㅣ 코스닥(코드.KQ) : 293490.KQ)
+            print("""
+      
+정확한 종목 코드를 입력해주세요 :
+[예시] 미국주식(티커) : AAPL ㅣ 코스피(코드.KS) : 005930.KS ㅣ 코스닥(코드.KQ) : 293490.KQ)
+
             """)
             user_ticker = input().replace(' ', '')
             if user_ticker == '':
