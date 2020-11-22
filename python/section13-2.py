@@ -35,7 +35,6 @@ with open('./resource/word.txt', 'r') as f:
 input("Ready? Press Enter Key!") # Enter Game Start!
 
 start = time.time()
-print("start : " + str(start))
 
 while n <= 5:
     random.shuffle(words)
@@ -66,9 +65,7 @@ while n <= 5:
     n += 1
 
 end = time.time() # End Time
-print("end : " + str(end))
 et = end - start  # 총 게임시간
-print("et : " + str(et))
 et = format(et, ".3f") # 소수 셋째 자리 출력(시간)
 
 if cor_cnt >= 3:
@@ -77,7 +74,7 @@ else:
     print("불합격")
 
 # 기록 DB 삽입
-cursor.execute("INSERT INTO records('cor_cnt', 'record', 'regdate') VALUES (?, ?, ?)", (cor_cnt, et, datetime.datetime.now().strftime('%Y-%M-%d %H:%M:%S')))
+cursor.execute("INSERT INTO records('cor_cnt', 'record', 'regdate') VALUES (?, ?, ?)", (cor_cnt, et, datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S')))
 
 
 # 수행 시간 출력
