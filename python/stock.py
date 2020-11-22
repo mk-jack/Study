@@ -104,7 +104,8 @@ if __name__ == '__main__':
 
     # 기록 DB 삽입
     cursor.execute("INSERT INTO stock_info('date', 'search', 'company', 'price') VALUES (?, ?, ?, ?)",
-                   (datetime.datetime.now().strftime('%Y-%M-%d %H:%M:%S'), user_ticker, stock1.company_name, stock1.price))
+                   (datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'), user_ticker, stock1.company_name, stock1.price))
+
 
     # 출력 부분 ㅣ None 값일 경우 조회 실패 메시지 출력
     if stock1.company_name:
@@ -113,12 +114,14 @@ if __name__ == '__main__':
     else:
         print('입력한 코드는 종목 코드가 아닙니다.')
 
-    if stock1.this_year_date:
+    if stock1.this_year_date or this_year_total_revenue is None:
+        print('조회되는 정보가 없습니다.')
+    else:
         print("[Financials Information]")
         print("Total Revenue")
         print(stock1.this_year_date + " : " + stock1.this_year_total_revenue)
         print(stock1.last_year_date + " : " + stock1.last_year_total_revenue)
-    else:
-        print('조회되는 정보가 없습니다.')
+
+
 
 

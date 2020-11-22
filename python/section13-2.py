@@ -35,6 +35,7 @@ with open('./resource/word.txt', 'r') as f:
 input("Ready? Press Enter Key!") # Enter Game Start!
 
 start = time.time()
+print("start : " + str(start))
 
 while n <= 5:
     random.shuffle(words)
@@ -65,7 +66,9 @@ while n <= 5:
     n += 1
 
 end = time.time() # End Time
+print("end : " + str(end))
 et = end - start  # 총 게임시간
+print("et : " + str(et))
 et = format(et, ".3f") # 소수 셋째 자리 출력(시간)
 
 if cor_cnt >= 3:
